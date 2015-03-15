@@ -9,9 +9,14 @@ PROGRAM=../copyright-year-updater.sh
 source assert.sh
 
 
+# Print usage
+assert_raises "$PROGRAM" 1
+assert_end "PrintUsage"
+
+
 # Fully run
 cp example.original.txt example.txt
-$PROGRAM example.txt
+assert_raises "$PROGRAM example.txt" 0
 DIFF_CMD="diff example.txt example.updated.txt"
 assert "$DIFF_CMD" ""
 assert_raises "$DIFF_CMD" 0
