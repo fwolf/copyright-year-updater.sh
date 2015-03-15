@@ -15,7 +15,22 @@
 
 VERSION=0.1
 
-CURRENT_YEAR=$(date +"%Y")
+
+function PrintUsage {
+    PROGNAME=$(basename $0)
+    cat <<-EOF
+$PROGNAME $VERSION
+
+Usage: $PROGNAME [FILE]
+
+EOF
+}
+
+
+if [ $# -lt 1 ]; then
+    PrintUsage
+    exit 1
+fi
 
 
 function UpdateFile {
@@ -122,4 +137,5 @@ function UpdateYears {
 }
 
 
+CURRENT_YEAR=$(date +"%Y")
 UpdateFile "$@"

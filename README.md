@@ -9,7 +9,7 @@ Automatic update year in copyright notice, follow
 ## Usage
 
 
-    copyright-year-updater.sh [PATH TO YOUR FILE]
+    copyright-year-updater.sh [FILE]
     
 Currently can only treat single file.
 
