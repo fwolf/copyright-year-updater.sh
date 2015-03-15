@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
-
-# For copyright year format:
+#====================================================================
+# copyright-year-updater.sh
+#
+# Copyright 2015 Fwolf <fwolf.aide+bin.public@gmail.com>
+# All rights reserved.
+#
+# Distributed under the MIT License.
+# http://opensource.org/licenses/MIT
+#
+# For copyright year style, see:
 # https://www.gnu.org/prep/maintain/html_node/Copyright-Notices.html
 # For quick view, run 'bc' and see its copyright notice.
+#====================================================================
+
+VERSION=0.1
 
 CURRENT_YEAR=$(date +"%Y")
 
