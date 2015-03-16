@@ -138,5 +138,7 @@ function UpdateYears {
 
 
 CURRENT_YEAR=$(date +"%Y")
+
 UpdateFile "$@"
+
 exit 0

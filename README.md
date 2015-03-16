@@ -11,7 +11,10 @@ Automatic update year in copyright notice, follow
 
     copyright-year-updater.sh [FILE]
     
-Currently can only treat single file.
+Currently can only update single file, but we can use `find` and `xargs`  to
+treat multiple files:
+
+    find *.sh | xargs -L1 copyright-year-updater.sh
 
 
 ## License
