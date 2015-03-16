@@ -15,8 +15,15 @@ assert_raises "$PROGRAM" 1
 assert_end "PrintUsage"
 
 
+# ParseOptions
+PARSE_OPTIONS_TEST=./parse-options-destination-year.test.sh
+assert "$PARSE_OPTIONS_TEST -y 2013" "2013"
+assert "$PARSE_OPTIONS_TEST --year 2014" "2014"
+assert_end "ParseOptions"
+
+
 # UpdateLine
-CURRENT_YEAR=2015
+DESTINATION_YEAR=2015
 # Disable file expansion, see https://stackoverflow.com/a/104023/1759745
 set -f
 # Disable word splitting, see https://www.gnu.org/software/bash/manual/bashref.html#Word-Splitting
@@ -51,7 +58,7 @@ assert_end "UpdateLine"
 
 # Fully run
 cp example.original.txt example.txt
-assert_raises "$PROGRAM example.txt" 0
+assert_raises "$PROGRAM -y 2015 example.txt" 0
 DIFF_CMD="diff example.txt example.updated.txt"
 assert "$DIFF_CMD" ""
 assert_raises "$DIFF_CMD" 0

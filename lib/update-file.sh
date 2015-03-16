@@ -86,7 +86,7 @@ function UpdateYears {
     years="$1"
 
     lastYear=${years:${#years} - 4:${#years}}
-    let "yearDiff = $CURRENT_YEAR - $lastYear"
+    let "yearDiff = $DESTINATION_YEAR - $lastYear"
 
     # If destination year is smaller or same with last copyright year, nothing
     # will happen, this program will not fix year error already exists.
@@ -95,22 +95,22 @@ function UpdateYears {
         # Eg: 2013 -> 2013, 2015
         # Eg: 2011-2013 --> 2011-2013, 2015
         # Eg: 2011, 2013 --> 2011, 2013, 2015
-        years="${years}, ${CURRENT_YEAR}"
+        years="${years}, ${DESTINATION_YEAR}"
 
     elif [ $yearDiff -eq 1 ]; then
         if [ 4 -eq ${#years} ]; then
             # Eg: 2014 -> 2014-2015
-            years="${years}-${CURRENT_YEAR}"
+            years="${years}-${DESTINATION_YEAR}"
 
         else
             charBeforeLastYear=${years:${#years} - 5:1}
             if [ "x$charBeforeLastYear" = "x-" ]; then
                 # Eg: 2011-2014 -> 2011-2015
-                years=${years:0:${#years} - 4}${CURRENT_YEAR}
+                years=${years:0:${#years} - 4}${DESTINATION_YEAR}
             else
                 # Eg: 2011,2014 -> 2011,2014-2015
                 # Eg: 2011, 2014 -> 2011, 2014-2015
-                years="${years}-${CURRENT_YEAR}"
+                years="${years}-${DESTINATION_YEAR}"
             fi
         fi
     fi
