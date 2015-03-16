@@ -121,7 +121,7 @@ function UpdateYears {
             # Eg: 2011-2013 --> 2011-2013, 2015
             # Eg: 2011, 2013 --> 2011, 2013, 2015
             years="${years}, ${CURRENT_YEAR}"
-        else
+        elif [ $yearDiff -eq 1 ]; then
             charBeforeLastYear=${years:${#years} - 5:1}
             if [ "x$charBeforeLastYear" = "x-" ]; then
                 # Eg: 2011-2014 -> 2011-2015
@@ -131,6 +131,9 @@ function UpdateYears {
                 years="${years}-${CURRENT_YEAR}"
             fi
         fi
+
+        # If destination year is smaller or same with last copyright year,
+        # nothing happen.
     fi
 
     echo "$years"
