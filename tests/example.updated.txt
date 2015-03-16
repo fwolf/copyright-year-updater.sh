@@ -19,12 +19,18 @@
  * @copyright   Copyright 2000,2005,2013, 2015 Holder
  *                   Was: 2000,2005,2013 Holder
  *
- * @copyright   Copyright 2014-2015 Holder
- *                   Was: 2014 Holder
- *
  * @copyright   Copyright 2000, 2005, 2010-2015 Holder
  *                   Was: 2000, 2005, 2010-2014 Holder
  *
  * @copyright   Copyright 2000,2005,2010-2013, 2015 Holder
  *                   Was: 2000,2005,2010-2013 Holder
+ *
+ * @copyright   Copyright 2013, 2015 Holder
+ *                   Was: 2013 Holder
+ *
+ * @copyright   Copyright 2014-2015 Holder
+ *                   Was: 2014 Holder
+ *
+ * @copyright   Copyright 2015 Holder
+ *                   Was: 2015 Holder
  */
