@@ -13,7 +13,7 @@
 # For quick view, run 'bc' and see its copyright notice.
 #====================================================================
 
-VERSION=0.1.1
+VERSION=0.1.2
 
 
 function PrintUsage {
