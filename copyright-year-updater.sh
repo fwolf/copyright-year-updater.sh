@@ -111,14 +111,22 @@ function UpdateLine {
 function UpdateYears {
     years="$1"
 
+    lastYear=${years:${#years} - 4:${#years}}
+    let "yearDiff = $CURRENT_YEAR - $lastYear"
+
+    # If destination year is smaller or same with last copyright year,
+    # nothing happen.
+
     if [ 4 -eq ${#years} ]; then
-        # Only have one year, eg: 2014 -> 2014-2015
-        years="${years}-${CURRENT_YEAR}"
+        if [ $yearDiff -gt 1 ]; then
+            # Eg: 2013 -> 2014, 2015
+            years="${years}, ${CURRENT_YEAR}"
+        elif [ $yearDiff -eq 1 ]; then
+            # Eg: 2014 -> 2014-2015
+            years="${years}-${CURRENT_YEAR}"
+        fi
 
     else
-        lastYear=${years:${#years} - 4:${#years}}
-        let "yearDiff = $CURRENT_YEAR - $lastYear"
-
         if [ $yearDiff -gt 1 ]; then
             # Eg: 2011-2013 --> 2011-2013, 2015
             # Eg: 2011, 2013 --> 2011, 2013, 2015
@@ -134,8 +142,6 @@ function UpdateYears {
             fi
         fi
 
-        # If destination year is smaller or same with last copyright year,
-        # nothing happen.
     fi
 
     echo "$years"
