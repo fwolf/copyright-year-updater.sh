@@ -60,20 +60,22 @@ function UpdateFile {
         changedLine=$(UpdateLine "$originalLine")
         #echo Changed: "$changedLine"
 
-        # Delete line, then insert new line
-        # '\\' Before inserted line is prevent sed to ignore leading space
-        # http://www.linuxquestions.org/questions/programming-9/sed-insert-line-with-leading-spaces-866217/
-        # http://stackoverflow.com/questions/18439528
-        sedString=$(
-            echo "$sedString"
-            echo "${lineNumber}i \\${changedLine}"
-            echo "${lineNumber}d"
-        )
+        if [ "x$originalLine" != "x$changedLine" ]; then
+            # Delete line, then insert new line
+            # '\\' Before inserted line is prevent sed to ignore leading space
+            # http://www.linuxquestions.org/questions/programming-9/sed-insert-line-with-leading-spaces-866217/
+            # http://stackoverflow.com/questions/18439528
+            sedString=$(
+                echo "$sedString"
+                echo "${lineNumber}i \\${changedLine}"
+                echo "${lineNumber}d"
+            )
+        fi
     done
 
-
-    #echo sed "'$sedString'" "$1"
-    sed -i "$sedString" "$1"
+    if [ ${#sedString} -gt 0 ]; then
+        sed -i "$sedString" "$1"
+    fi
 }
 
 
