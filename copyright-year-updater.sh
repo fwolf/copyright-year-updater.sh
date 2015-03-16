@@ -15,7 +15,12 @@
 
 VERSION=0.1.2
 
-P2R=${0%/*}/
+self="$0"
+if [ -L "$self" ]; then
+    self=${self%/*}/$(readlink "$self")
+fi
+P2R=${self%/*}/
+
 source ${P2R}lib/update-file.sh
 
 
