@@ -114,34 +114,31 @@ function UpdateYears {
     lastYear=${years:${#years} - 4:${#years}}
     let "yearDiff = $CURRENT_YEAR - $lastYear"
 
-    # If destination year is smaller or same with last copyright year,
-    # nothing happen.
+    # If destination year is smaller or same with last copyright year, nothing
+    # will happen, this program will not fix year error already exists.
 
-    if [ 4 -eq ${#years} ]; then
-        if [ $yearDiff -gt 1 ]; then
-            # Eg: 2013 -> 2014, 2015
-            years="${years}, ${CURRENT_YEAR}"
-        elif [ $yearDiff -eq 1 ]; then
+    if [ $yearDiff -gt 1 ]; then
+        # Eg: 2013 -> 2013, 2015
+        # Eg: 2011-2013 --> 2011-2013, 2015
+        # Eg: 2011, 2013 --> 2011, 2013, 2015
+        years="${years}, ${CURRENT_YEAR}"
+
+    elif [ $yearDiff -eq 1 ]; then
+        if [ 4 -eq ${#years} ]; then
             # Eg: 2014 -> 2014-2015
             years="${years}-${CURRENT_YEAR}"
-        fi
 
-    else
-        if [ $yearDiff -gt 1 ]; then
-            # Eg: 2011-2013 --> 2011-2013, 2015
-            # Eg: 2011, 2013 --> 2011, 2013, 2015
-            years="${years}, ${CURRENT_YEAR}"
-        elif [ $yearDiff -eq 1 ]; then
+        else
             charBeforeLastYear=${years:${#years} - 5:1}
             if [ "x$charBeforeLastYear" = "x-" ]; then
                 # Eg: 2011-2014 -> 2011-2015
                 years=${years:0:${#years} - 4}${CURRENT_YEAR}
             else
                 # Eg: 2011,2014 -> 2011,2014-2015
+                # Eg: 2011, 2014 -> 2011, 2014-2015
                 years="${years}-${CURRENT_YEAR}"
             fi
         fi
-
     fi
 
     echo "$years"
