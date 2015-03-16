@@ -1,6 +1,14 @@
 # Change Log
 
 
+### v0.1.3 (2015-03-16)
+
+ - Move functions to lib/
+ - Add more tests
+ - Fix append same year error when single year
+ - Fix find self path error when use via symbolic link
+
+
 ### v0.1.2 (2015-03-16)
 
  - Skip file change if not needed
