@@ -9,8 +9,18 @@ Automatic update year in copyright notice, follow
 ## Usage
 
 
-    copyright-year-updater.sh [FILE]
+    copyright-year-updater.sh [Options] [File]
+
+
+### Options
+
+    -y, --year              Copyright end year, default is current year
+
+All options must set before `[File]`.
+
     
+### Multiple files
+
 Currently can only update single file, but we can use `find` and `xargs`  to
 treat multiple files:
 
