@@ -21,18 +21,13 @@ function UpdateFile {
     sedString=""
 
     # Double quote in 'in' is required
+    # Matched line is a full original line
     for matchedLine in "${matchedLines[@]}"; do
-        # Full matched line for replace later
-        #echo "$matchedLine"
-
         lineNumber=${matchedLine%%:*}
-        #echo $lineNumber
 
         originalLine=${matchedLine#*:}
-        #echo "$originalLine"
 
         changedLine=$(UpdateLine "$originalLine")
-        #echo Changed: "$changedLine"
 
         if [ "x$originalLine" != "x$changedLine" ]; then
             # Delete line, then insert new line
