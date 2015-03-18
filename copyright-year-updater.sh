@@ -13,7 +13,7 @@
 # For quick view, run 'bc' and see its copyright notice.
 #====================================================================
 
-VERSION=0.1.3
+VERSION=0.2
 
 self="$0"
 if [ -L "$self" ]; then

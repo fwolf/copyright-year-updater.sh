@@ -1,6 +1,11 @@
 # Change Log
 
 
+## v0.2 (2015-03-18)
+
+ - New option -y/--years to set copyright end year
+
+
 ### v0.1.3 (2015-03-16)
 
  - Move functions to lib/
