@@ -28,9 +28,9 @@ source ${P2R}lib/update-file.sh
 function PrintUsage {
     PROGNAME=$(basename $0)
     cat <<-EOF
-$PROGNAME $VERSION
+${PROGNAME} ${VERSION}
 
-Usage: $PROGNAME [Options] [File]
+Usage: ${PROGNAME} [Options] [File]
 
 Options:
 

@@ -69,7 +69,7 @@ function UpdateLine {
     totalLength=${#1}
     beforeLength=${#before}
     afterLength=${#after}
-    years=${1:$beforeLength:$totalLength - $beforeLength - $afterLength}
+    years=${1:${beforeLength}:${totalLength} - ${beforeLength} - ${afterLength}}
 
     years=$(UpdateYears "$years")
 
@@ -86,13 +86,13 @@ function UpdateYears {
     # If destination year is smaller or same with last copyright year, nothing
     # will happen, this program will not fix year error already exists.
 
-    if [ $yearDiff -gt 1 ]; then
+    if [ ${yearDiff} -gt 1 ]; then
         # Eg: 2013 -> 2013, 2015
         # Eg: 2011-2013 --> 2011-2013, 2015
         # Eg: 2011, 2013 --> 2011, 2013, 2015
         years="${years}, ${DESTINATION_YEAR}"
 
-    elif [ $yearDiff -eq 1 ]; then
+    elif [ ${yearDiff} -eq 1 ]; then
         if [ 4 -eq ${#years} ]; then
             # Eg: 2014 -> 2014-2015
             years="${years}-${DESTINATION_YEAR}"

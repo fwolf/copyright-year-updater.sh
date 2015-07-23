@@ -4,4 +4,4 @@ source ../lib/parse-options.sh
 
 ParseOptions "$@"
 
-echo $DESTINATION_YEAR
+echo ${DESTINATION_YEAR}
