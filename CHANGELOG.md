@@ -1,6 +1,11 @@
 # Change Log
 
 
+### v0.2.1 (2015-07-23)
+
+ - Add git pre-commit hook example
+
+
 ## v0.2 (2015-03-18)
 
  - New option -y/--years to set copyright end year
