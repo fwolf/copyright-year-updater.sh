@@ -1,6 +1,11 @@
 # Change Log
 
 
+### v0.2.2 (2016-09-25)
+
+ - Add notice for usage in MacOS X
+
+
 ### v0.2.1 (2015-07-23)
 
  - Add git pre-commit hook example
