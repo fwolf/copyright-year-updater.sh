@@ -11,16 +11,17 @@
 export COPYRIGHT_YEAR_UPDATER='copyright-year-updater.sh'
 
 
+# Command mktemp is a little different in MacOS X, need '-t' param
 git diff-index --cached --name-only HEAD | xargs -I % sh -c '
     git ls-files --stage % | while read MODE OBJECT STAGE FILE_PATH; do
         case ${MODE} in
         10*)
             # Copy file to temporary
-            STAGED_FILE=$(mktemp)
+            STAGED_FILE=$(mktemp -t t)
             git show ${OBJECT} > "${STAGED_FILE}"
 
             # Do change copyright year
-            FORMATTED_FILE=$(mktemp)
+            FORMATTED_FILE=$(mktemp -t t)
             cp "${STAGED_FILE}" "${FORMATTED_FILE}"
             ${COPYRIGHT_YEAR_UPDATER} "${FORMATTED_FILE}"
 
