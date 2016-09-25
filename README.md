@@ -34,6 +34,31 @@ Copy `pre-commit.sample.sh` as `.git/hooks/pre-commit`, chmod +x.
 This hook will not touch un-staged file, even this file have staged part.
 
 
+## Notice for usage in MacOS X
+
+MacOS X uses BSD version command utils, so you need GNU versons:
+
+    - Bash v4
+    - grep
+    - sed
+
+You can install them via brew and configure to use them, here is some useful
+links:
+
+    - http://superuser.com/a/1038813/190139
+    - https://gist.github.com/samnang/1759336
+    - http://apple.stackexchange.com/a/193300
+    - http://stackoverflow.com/questions/30003570/how-to-use-gnu-sed-on-mac-os-x
+    - https://sagebionetworks.jira.com/wiki/display/PLFM/Fixing+sed+on+OSx
+
+Brew by default install `grep` to `ggrep` and `sed` to `gsed`, to config
+default to use GNU versions:
+
+    - In `/usr/local/bin/`, ln `ggrep` to `grep`, `gsed` to `sed`
+    - Config PATH, put `/usr/local/bin/` before `/usr/bin/` or `$PATH`
+    - Restart bash
+
+
 ## License
 
 MIT
