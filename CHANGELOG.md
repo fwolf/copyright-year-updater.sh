@@ -1,6 +1,11 @@
 # Change Log
 
 
+### v0.2.3 (2016-09-26)
+
+ - Add help to install GNU xargs via findutils
+
+
 ### v0.2.2 (2016-09-25)
 
  - Add notice for usage in MacOS X
