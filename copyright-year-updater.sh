@@ -27,7 +27,7 @@ source ${P2R}lib/update-file.sh
 
 
 function PrintUsage {
-    PROGNAME=$(basename $0)
+    PROGNAME=$(basename "$self")
     cat <<-EOF
 ${PROGNAME} ${VERSION}
 

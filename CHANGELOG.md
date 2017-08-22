@@ -1,6 +1,11 @@
 # Change Log
 
 
+### Un-versioned
+
+ - Fix filename error in help when use as soft symbolic link
+
+
 ### v0.2.4 (2017-08-22)
 
  - Fix path error when ln by absolute path
