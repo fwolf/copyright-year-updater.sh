@@ -17,7 +17,8 @@ VERSION=0.2.1
 
 self="$0"
 if [ -L "$self" ]; then
-    self=${self%/*}/$(readlink "$self")
+    self=$(readlink "$self")
+    self=$(realpath "$self")
 fi
 P2R=${self%/*}/
 
