@@ -1,6 +1,11 @@
 # Change Log
 
 
+### v0.2.4 (2017-08-22)
+
+ - Fix path error when ln by absolute path
+
+
 ### v0.2.3 (2016-09-26)
 
  - Add help to install GNU xargs via findutils

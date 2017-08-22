@@ -2,7 +2,7 @@
 #====================================================================
 # copyright-year-updater.sh
 #
-# Copyright 2015 Fwolf <fwolf.aide+bin.public@gmail.com>
+# Copyright 2015-2017 Fwolf <fwolf.aide+bin.public@gmail.com>
 # All rights reserved.
 #
 # Distributed under the MIT License.
@@ -13,7 +13,7 @@
 # For quick view, run 'bc' and see its copyright notice.
 #====================================================================
 
-VERSION=0.2.1
+VERSION=0.2.4
 
 self="$0"
 if [ -L "$self" ]; then
