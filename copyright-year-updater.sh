@@ -2,7 +2,7 @@
 #====================================================================
 # copyright-year-updater.sh
 #
-# Copyright 2015-2017 Fwolf <fwolf.aide+bin.public@gmail.com>
+# Copyright 2015-2017, 2020 Fwolf <fwolf.aide+bin.public@gmail.com>
 # All rights reserved.
 #
 # Distributed under the MIT License.
@@ -17,8 +17,7 @@ VERSION=0.2.4
 
 self="$0"
 if [ -L "$self" ]; then
-    self=$(readlink "$self")
-    self=$(realpath "$self")
+    self=$(readlink -f "$self" || realpath "$(readlink "$self")")
 fi
 P2R=${self%/*}/
 
