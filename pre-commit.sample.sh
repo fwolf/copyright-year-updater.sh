@@ -17,11 +17,11 @@ git diff-index --cached --name-only HEAD | xargs -I % sh -c '
         case ${MODE} in
         10*)
             # Copy file to temporary
-            STAGED_FILE=$(mktemp -t t)
+            STAGED_FILE=$(mktemp -t copyright_year-XXXXXXXXXX)
             git show ${OBJECT} > "${STAGED_FILE}"
 
             # Do change copyright year
-            FORMATTED_FILE=$(mktemp -t t)
+            FORMATTED_FILE=$(mktemp -t copyright_year-XXXXXXXXXX)
             cp "${STAGED_FILE}" "${FORMATTED_FILE}"
             ${COPYRIGHT_YEAR_UPDATER} "${FORMATTED_FILE}"
 
