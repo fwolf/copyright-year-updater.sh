@@ -22,8 +22,8 @@ if [ -L "$self" ]; then
 fi
 P2R=${self%/*}/
 
-source ${P2R}lib/parse-options.sh
-source ${P2R}lib/update-file.sh
+source "${P2R}"lib/parse-options.sh
+source "${P2R}"lib/update-file.sh
 
 
 function PrintUsage {

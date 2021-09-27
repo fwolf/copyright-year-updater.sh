@@ -4,6 +4,7 @@
 ### Un-versioned
 
  - Fix filename error in help when use as soft symbolic link
+ - Fix error when put under directory with space in name
 
 
 ### v0.2.4 (2017-08-22)
